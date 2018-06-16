@@ -274,6 +274,38 @@ header .header-profile {
 
 }
 
+/* Available Offers*/
+
+.available_offers-links {
+   overflow: hidden;
+   margin: 20px;
+}
+
+.available_offers-links h2 {
+    font-family: Catamaran;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111
+    text-transform: uppercase;
+ }
+
+.available_offers-links .available-link {
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin: 20px 10px 0;
+    background-color: #e3e3e3;
+}
+
+.available_offers-links .available link p {
+    font-family: Catamaran;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-align: center;
+    text-transform: uppercase;
+ }
+
 /*Footer*/
 
 footer {
