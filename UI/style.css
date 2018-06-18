@@ -346,6 +346,55 @@ header .header-profile {
     padding-bottom: 50px;
  }
 
+ /*Create Ride*/
+ .myoffer- {
+     background-color: #ccc;
+ }
+
+ .myoffer- h2 {
+    font-family: Catamaran;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600px;
+    color: #111;
+    text-transform: uppercase;
+ }
+
+ .myoffer- label {
+    font-family: Catamaran;
+     float: left;
+     width: 150px;
+     font-size: 16px;
+     text-align: right;
+     padding-right: 12px;
+     margin-top: 20px;
+     clear: left;
+     
+ }
+
+ .myoffer- input {
+    margin-top: 20px;
+    font-family: Catamaran;
+}
+
+.myoffer- textarea {
+    margin-top: 20px;
+    font-family: Catamaran;
+}
+
+.myoffer-  {
+    margin-top: 20px;
+    font-family: Catamaran;
+}
+
+.myoffer- .actions  {
+    margin: 20px;
+    font-family: Catamaran;
+    text-align: center;
+    
+}
+
+
 /*Footer*/
 
 footer {
@@ -372,4 +421,13 @@ footer ul li a {
     font-size: 16px;
     color: #fff;
     line-height: 30px;
+}
+
+footer h5 {
+    padding-top: 20px;
+    font-family: Catamaran;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
 }
