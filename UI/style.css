@@ -191,6 +191,21 @@ header .header-profile {
         padding: 0 20px;
 
     }
+
+    header .header-access {
+        display: block;
+        font-family: Catamaran;
+        font-size: 16px;
+        color: #111; 
+        text-transform: uppercase;
+        line-height: 38px;
+        border: 1px solid #111;
+        float: right;
+        margin-right: 40px;
+        margin-top: 30px;
+        padding: 0 20px;
+
+    }
 }
 
 /* Dashboard*/
@@ -297,7 +312,8 @@ header .header-profile {
     background-color: #e3e3e3;
 }
 
-.available_offers-links .available link p {
+.available_offers-links .available-link p {
+    padding-top: 45%;
     font-family: Catamaran;
     font-size: 16px;
     font-weight: 600;
