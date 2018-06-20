@@ -292,35 +292,75 @@ header .header-profile {
 /* Available Offers*/
 
 .available_offers-links {
-   overflow: hidden;
-   margin: 20px;
+    overflow: hidden;
+    margin: 20px;
+    font-family: Arial;
+    background: #fff;
+    color: #333;
 }
-
+ 
 .available_offers-links h2 {
-    font-family: Catamaran;
-    font-size: 28px;
-    font-weight: 600;
-    color: #111
-    text-transform: uppercase;
- }
-
-.available_offers-links .available-link {
-    float: left;
-    width: 230px;
-    height: 230px;
-    margin: 20px 10px 0;
-    background-color: #e3e3e3;
+     font-family: Catamaran;
+     font-size: 28px;
+     font-weight: 600;
+     color: #111
+     text-transform: uppercase;
 }
-
+ 
+.available_offers-links .available-link {
+     float: left;
+     width: 230px;
+     height: 230px;
+     margin: 20px 10px 0;
+     background-color: #e3e3e3;
+     box-sizing: border-box;
+}
+ 
 .available_offers-links .available-link p {
-    padding-top: 45%;
-    font-family: Catamaran;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111;
-    text-align: center;
-    text-transform: uppercase;
- }
+     padding-top: 45%;
+     font-family: Catamaran;
+     font-size: 16px;
+     font-weight: 600;
+     color: #111;
+     text-align: center;
+     text-transform: uppercase;
+}
+ 
+.offer-box {
+      list-style: none;
+      border: 1px solid;
+      margin: 0;
+      padding: 0;
+      transition: 0.3s;
+     
+}
+ 
+.offer-box:hover {
+      box-shadow: 0 10px 15px 0 turquoise;
+}
+ 
+.offer-box .header {
+      background-color: #111;
+      color: #fff;
+      font-size: 25px;
+}
+ 
+.offer-box li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+ 
+}
+ 
+.button {
+      background-color: #4CAf50;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+}
 
  /* About Page*/
 
@@ -429,7 +469,7 @@ header .header-profile {
 /*My Rides*/
 
 .myoffers {
-    background: skyblue;
+    background: #fff;
 
 }
 
@@ -462,6 +502,45 @@ header .header-profile {
 .myoffers td:hover {
     background: teal;
 }
+
+/*All Offers*/
+
+
+.alloffers {
+    background: #fff;
+
+}
+
+.alloffers h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.alloffers table {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    table-layout: fixed;
+}
+
+.alloffers table, tr, th, td {
+    padding: 20px;
+    color: white;
+    border: 1px solid #080808;
+    border-collapse: collapse;
+    font-size: 18px;
+    font-family: Arial;
+    background: linear-gradient(top, #3c3c3c 0%, #222222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%)
+}
+
+.alloffers td:hover {
+    background: teal;
+}
+
 /*Footer*/
 
 
