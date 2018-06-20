@@ -25,45 +25,31 @@
         <main>
             <section class="myoffer-">
                 <div class="wrapper">
-                    <h2>New Ride Offer</h2>
+                <h1>Create a New Ride</h1>
                     <form action="myrides.html">
-                        <div>
-                            <label for="thedate">Date:</label>
-                            <input type="date"
-                        </div>
-                        <div>
-                            <label for="wherefrom">From:</label>
-                            <input type="text"
-                        </div>
-                        <div>
-                            <label for="whereto">Destination:</label>
-                            <input type="text"
-                        </div>
-                        <div>
-                            <label for="thetime">Departure time:</label>
-                            <input type="time"
-                        </div>
-                        <div>
-                            <label for="seats">Seats available:</label>
-                            <input type="number"
-                        </div>
-                        <div>
-                            <label for="cost">Cost per seat(Ksh):</label>
-                            <input type="number"
-                        </div>
-                        <div>
-                            <label for="description">Description:</label>
-                            <textarea rows="5" cols="50"></textarea>
-                        </div>
-                        <div class="actions">
-                            <input type="submit" value="Create Ride">
-                            <a href="dashboard.html">
-                                <input type="button" value="Cancel"
-                            </a>
-                        </div> 
-                    </form>
-                </div>                   
-                </section>      
+                        <p>Date</p>
+                        <input type="datetime-local" name="" required="">
+                        <p>From</p>
+                        <input type="text" name="" required="">
+                        <p>To</p>
+                        <input type="text" name="" required="">
+                        <p>Number of seats</p>
+                        <select id="seats">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <p>Cost Per Seat</p>
+                        <input type="number" name="" required="">
+                        <p>Description</p>
+                        <textarea rows="5" cols="50"></textarea>
+                        <input type="submit" name="" value="Create Ride">
+                    </form>        
+                </div>
+            </section>
             </main>
             <div class="wrapper"></div>
                 <footer>
