@@ -347,54 +347,83 @@ header .header-profile {
  }
 
  /*Create Ride*/
- .myoffer- {
-     background-color: #ccc;
- }
-
- .myoffer- h2 {
-    font-family: Catamaran;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600px;
+ 
+ .myoffer-{
+    background: teal;
     color: #111;
-    text-transform: uppercase;
- }
-
- .myoffer- label {
-    font-family: Catamaran;
-     float: left;
-     width: 150px;
-     font-size: 16px;
-     text-align: right;
-     padding-right: 12px;
-     margin-top: 20px;
-     clear: left;
-     
- }
-
- .myoffer- input {
-    margin-top: 20px;
-    font-family: Catamaran;
-}
-
-.myoffer- textarea {
-    margin-top: 20px;
-    font-family: Catamaran;
-}
-
-.myoffer-  {
-    margin-top: 20px;
-    font-family: Catamaran;
-}
-
-.myoffer- .actions  {
     margin: 20px;
-    font-family: Catamaran;
-    text-align: center;
-    
 }
 
+.myoffer- h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
 
+.myoffer- p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.myoffer- input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.myoffer- input[type="text"], input[type="datetime-local"], input[type="number"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.myoffer- select
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.myoffer- textarea
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.myoffer- input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.myoffer- input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #1cff07;
+    color: #000;
+}
 /*Footer*/
 
 footer {
