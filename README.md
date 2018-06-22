@@ -11,3 +11,15 @@ DELETE /api/v1/rides/<ride_id>  Delete a particular ride
 GET /api/v1/rides/<ride_id>/requests  View all the requests made for a particular ride
 POST /api/v1/<ride_id>/requests   Make a request to join a ride
 ```
+## Install
+
+git clone
+cd ridemyway-api
+pip install -r requirements.txt
+
+## To login
+
+http://localhost:5000/
+
+User: user
+Pass: somepasswd
