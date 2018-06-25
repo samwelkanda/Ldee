@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask import abort
 from flask import make_response
+from flask import request
 
 app = Flask(__name__)
 
@@ -52,6 +53,23 @@ def get_ride(ride_id):
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
+@app.route('/ridemyway/api/v1/rides', methods=['POST'])
+def create_ride():
+    data = request.get_json() or {}
+    if 'date/time' not in data or 'from' not in data or 'destination' not in data or 'seats' not in data or 'cost' not in data:
+        abort(400)
+    ride = {
+        'id': rides[-1]['id'] + 1,
+        'date/time': request.json['date/time'],
+        'from': request.json['from'],
+        'destination': request.json['destination'],
+        'seats': request.json['seats'],
+        'cost': request.json['cost'],
+        'description': request.json['description'],
+        'Driver': request.json['Driver']
+    }
+    rides.append(ride)
+    return jsonify({'ride': ride}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
