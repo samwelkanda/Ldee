@@ -13,7 +13,7 @@ rides = [
         'destination': u'Nairobi West',
         'seats': 4,
         'cost': 70,
-        'description': u'G-Wagon KCP 214',
+        'from': u'G-Wagon KCP 214',
         'driver': u'Paul Pogba',
         'requests': [
             {
@@ -32,7 +32,7 @@ rides = [
         'destination': u'Karen',
         'seats': 2,
         'cost': 100,
-        'description': u'Toyota V8 KCD 777',
+        'from': u'Toyota V8 KCD 777',
         'driver': u'Romelu Lukaku',
         'requests':[]
     },
@@ -43,13 +43,11 @@ rides = [
         'destination': u'Mombasa',
         'seats': 3,
         'cost': 2000,
-        'description': u'Audi KBX 074',
-        'Driver': u'Marcus Rashford',
+        'from': u'Audi KBX 074',
+        'driver': u'Marcus Rashford',
         'requests':[]
     },    
 ]
-
-
 
 
 @app.route('/ridemyway/api/v1/rides', methods=['GET'])
@@ -79,8 +77,8 @@ def create_ride():
         'destination': request.json['destination'],
         'seats': request.json['seats'],
         'cost': request.json['cost'],
-        'description': request.json['description'],
-        'Driver': request.json['Driver']
+        'from': request.json['from'],
+        'driver': request.json['driver']
     }
     rides.append(ride)
     return jsonify({'ride': ride}), 201
@@ -110,7 +108,32 @@ def make_request(ride_id):
     }
     requests.append(my_request)
     return jsonify({'my_request': my_request}), 201
-   
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['PUT'])
+def update_task(ride_id):
+    ride = [ride for ride in rides if ride['id'] == ride_id]
+    if len(ride) == 0:
+        abort(404)
+    if not request.json:
+        abort(400)
+    if 'date/time' in request.json and type(request.json['date/time']) !=str:
+        abort(400)
+    if 'from' in request.json and type(request.json['from']) !=str:
+        abort(400)
+    if 'destination' in request.json and type(request.json['destination']) !=str:
+        abort(400)
+    if 'seats' in request.json and type(request.json['seats']) !=int:
+        abort(400)
+    if 'cost' in request.json and type(request.json['cost']) !=int:
+        abort(400)
+    if 'driver' in request.json and type(request.json['driver']) !=str:
+        abort(400)
+
+    ride[0]['date/time'] = request.json.get('date/time', ride[0]['date/time'])
+    ride[0]['from'] = request.json.get('from', ride[0]['from'])
+    ride[0]['destination'] = request.json.get('destination', ride[0]['destination'])
+    ride[0]['seats'] = request.json.get('seats', ride[0]['seats'])
+    ride[0]['cost'] = request.json.get('cost', ride[0]['cost'])
+    ride[0]['driver'] = request.json.get('driver', ride[0]['driver'])
+    ride[0]['requests'] = request.json.get('requests', ride[0]['requests'])
+    return jsonify({'ride': ride[0]})
