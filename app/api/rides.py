@@ -1,53 +1,6 @@
-from flask import Flask, jsonify
-from flask import abort
-from flask import make_response
-from flask import request
-
-app = Flask(__name__)
-
-rides = [
-    {
-        'id': 1,
-        'date/time': u'01/02/2018, 08:00 AM',
-        'from': u'Langata', 
-        'destination': u'Nairobi West',
-        'seats': 4,
-        'cost': 70,
-        'from': u'G-Wagon KCP 214',
-        'driver': u'Paul Pogba',
-        'requests': [
-            {
-                'id': 1,
-                'ride_id':1, 
-                'pickup_location': u'CBD',
-                'seats': 1,
-                'requester': u'James Matic',
-            }
-]
-    },
-    {
-        'id': 2,
-        'date/time': u'02/14/2018, 09:00 AM',
-        'from': u'Hurlingam', 
-        'destination': u'Karen',
-        'seats': 2,
-        'cost': 100,
-        'from': u'Toyota V8 KCD 777',
-        'driver': u'Romelu Lukaku',
-        'requests':[]
-    },
-    {
-        'id': 3,
-        'date/time': u'02/24/2018, 05:00 AM',
-        'from': u'Nairobi',
-        'destination': u'Mombasa',
-        'seats': 3,
-        'cost': 2000,
-        'from': u'Audi KBX 074',
-        'driver': u'Marcus Rashford',
-        'requests':[]
-    },    
-]
+from flask import Flask, jsonify, abort, make_response, request
+from . import api
+from app.models import rides
 
 
 @app.route('/ridemyway/api/v1/rides', methods=['GET'])
@@ -77,7 +30,7 @@ def create_ride():
         'destination': request.json['destination'],
         'seats': request.json['seats'],
         'cost': request.json['cost'],
-        'from': request.json['from'],
+        'description': request.json['description'],
         'driver': request.json['driver']
     }
     rides.append(ride)
@@ -110,7 +63,7 @@ def make_request(ride_id):
     return jsonify({'my_request': my_request}), 201
 
 @app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['PUT'])
-def update_task(ride_id):
+def update_ride(ride_id):
     ride = [ride for ride in rides if ride['id'] == ride_id]
     if len(ride) == 0:
         abort(404)
@@ -137,3 +90,11 @@ def update_task(ride_id):
     ride[0]['driver'] = request.json.get('driver', ride[0]['driver'])
     ride[0]['requests'] = request.json.get('requests', ride[0]['requests'])
     return jsonify({'ride': ride[0]})
+
+@app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['DELETE'])
+def delete_ride(ride_id):
+    ride = [ride for ride in rides if ride['id'] == ride_id]
+    if len(ride) == 0:
+        abort(404)
+    rides.remove(ride[0])
+    return jsonify({'result': True})
