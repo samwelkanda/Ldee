@@ -1,4 +1,6 @@
 from flask import Flask, jsonify
+from flask import abort
+from flask import make_response
 
 app = Flask(__name__)
 
@@ -38,6 +40,17 @@ rides = [
 @app.route('/ridemyway/api/v1/rides', methods=['GET'])
 def get_rides():
     return jsonify({'rides': rides})
+
+@app.route('/ridemyway/api/v1/rides/<int:ride_id>', methods=['GET'])
+def get_ride(ride_id):
+    ride = [ride for ride in rides if ride['id'] == ride_id]
+    if len(ride) == 0:
+        abort(404)
+    return jsonify({'ride': ride[0]})
+
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
 
 
 if __name__ == '__main__':
