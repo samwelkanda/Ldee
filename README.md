@@ -1,25 +1,59 @@
-# Ride-My-Way-API
 
-##list of endpoints for the API
+# Ride-My-Way API
+
+The API enables users to make various CRUD requests to the application by accessing the following endpoints.
+
+## Endpoints
+
+The v1 API contains the following API endpoints for users
+
+### View All Ride Offers
+Endpoint:
 ```
-POST ridemyway/api/v1/rides 	Create new ride
-GET ridemyway/api/v1/rides 	View all availabele ride offers
-GET /api/v1/rides/<ride_id>	View a specific ride offer
-PUT /api/v1/rides/<ride_id>	Modify and update a specific ride offer 
-POST /api/v1/rides/<ride_id>Create a ride offer
-DELETE /api/v1/rides/<ride_id>  Delete a particular ride
-GET /api/v1/rides/<ride_id>/requests  View all the requests made for a particular ride
-POST /api/v1/<ride_id>/requests   Make a request to join a ride
+/api/v1/rides
 ```
-## Install
+request:GET
 
-git clone
-cd ridemyway-api
-pip install -r requirements.txt
+### View a specific ride offer
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:GET
 
-## To login
+### Modify/Update a specific ride offer 
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:PUT
 
-http://localhost:5000/
+### Create a ride offer
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:POST
 
-User: user
-Pass: somepasswd
+### View requests for a particular ride
+Endpoint:
+```
+api/v1/rides/<ride_id>/requests
+```
+request:GET
+
+### Request to join a ride
+Endpoint:
+```
+/api/v1/<ride_id>/requests
+```
+request:POST
+
+### Delete a ride
+Endpoint
+```
+/api/v1/rides/<ride_id>
+```
+request:DELETE
+
+
