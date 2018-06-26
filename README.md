@@ -1,9 +1,7 @@
 
 # Ride-My-Way API
 
-[![Build Status](https://travis-ci.org/samwelkanda/Ride-My-Way.svg?branch=master)](https://travis-ci.org/samwelkanda/Ride-My-Way)
-
-[![Coverage Status](https://coveralls.io/repos/github/samwelkanda/Ride-My-Way/badge.svg?branch=master)](https://coveralls.io/github/samwelkanda/Ride-My-Way?branch=master)
+[![Build Status](https://travis-ci.org/samwelkanda/Ride-My-Way.svg?branch=master)](https://travis-ci.org/samwelkanda/Ride-My-Way) [![Coverage Status](https://coveralls.io/repos/github/samwelkanda/Ride-My-Way/badge.svg?branch=master)](https://coveralls.io/github/samwelkanda/Ride-My-Way?branch=master&service=github)
 
 The API enables users to make various CRUD requests to the application by accessing the following endpoints.
 
