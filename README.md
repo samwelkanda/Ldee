@@ -1,12 +1,59 @@
-# Ride-My-Way
-## Overview
-Ride-my App is a carpooling application that provides drivers with the ability to create ride offers
-and passengers to join available ride offers.
-## Features
-1. Users can create an account and log in.
-2. Drivers can add ride offers..
-3. Passengers can view all available ride offers.
-4. Passengers can see the details of a ride offer and request to join the ride. E.g What time
-the ride leaves, where it is headed e.t.c
-5. Drivers can view the requests to the ride offer they created.
-6. Drivers can either accept or reject a ride request.
+
+# Ride-My-Way API
+
+The API enables users to make various CRUD requests to the application by accessing the following endpoints.
+
+## Endpoints
+
+The v1 API contains the following API endpoints for users
+
+### View All Ride Offers
+Endpoint:
+```
+/api/v1/rides
+```
+request:GET
+
+### View a specific ride offer
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:GET
+
+### Modify/Update a specific ride offer 
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:PUT
+
+### Create a ride offer
+Endpoint:
+```
+/api/v1/rides/<ride_id>
+```
+request:POST
+
+### View requests for a particular ride
+Endpoint:
+```
+api/v1/rides/<ride_id>/requests
+```
+request:GET
+
+### Request to join a ride
+Endpoint:
+```
+/api/v1/<ride_id>/requests
+```
+request:POST
+
+### Delete a ride
+Endpoint
+```
+/api/v1/rides/<ride_id>
+```
+request:DELETE
+
+
