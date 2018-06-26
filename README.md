@@ -1,6 +1,8 @@
 
 # Ride-My-Way API
 
+[![Build Status](https://travis-ci.org/samwelkanda/Ride-My-Way.svg?branch=master)](https://travis-ci.org/samwelkanda/Ride-My-Way)
+
 The API enables users to make various CRUD requests to the application by accessing the following endpoints.
 
 ## Endpoints
