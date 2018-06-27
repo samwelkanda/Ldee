@@ -1,0 +1,15 @@
+{
+    "name": "Ride-My-Way",
+    "description": "A ride sharing application for users to create rides or request to join any available ride",
+    "image": "heroku/python",
+    "repository": "https://github.com/samwelkanda/Ride-My-Way",
+    "keywords": ["python", "flask" ],
+    "addons": [ "coveralls" ],
+    "environments": {
+      "test": {
+        "scripts": {
+          "test": "coverage run -m pytest"
+        }
+      }
+    }
+  }
