@@ -14,7 +14,7 @@ class DevelopmentConfig(Config):
     """
     Development configurations
     """
-    pass
+    DEBUG = True
 
 class TestingConfig(Config):
     """
