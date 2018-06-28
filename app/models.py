@@ -1,89 +1,91 @@
-# Sample data that can be accessed through the API
+from app import app
 import datetime
-import os
-
-rides = {}
-requests = {}
 
 
-class Rides:
-    # Methods for rides endpoints 
+class Ride(object):
+    """
+    Class to represent the BucketList model
+    """
+   
 
-    
-    
-    @staticmethod
-    def create_ride(datentime, starting, destination, seats, cost, description, driver):
+    def __init__(self, ride_id, datentime, start, destination, seats, cost, driver:
+        self.ride_id = id
+        self.datentime = u'datentime'
+        self.start = u'start'
+        self.destination = u'destination'
+        self.seats = u'seats'
+        self.cost = u'cost'
+        self.driver = u'driver'
+        self.created_at = datetime.datetime.utcnow()
 
-        new_id = len(rides) + 1
-        rides[new_id] = {"datentime": datentime,
-                         "starting": starting,
-                         "destination": destination,
-                         "seats": seats,
-                         "cost": cost,
-                         "description": description,
-                         "driver": driver}
-        return {"msg": "Your ride has been added"}
+    def save(self):
+        """
+        Save a ride in the list
+        :return:
+        """
+        ride = [
+        {
+        'id': rides[-1]['id'] + 1,
+        'datentime': request.json['datentime'],
+        'start': request.json['start'],
+        'destination': request.json['destination'],
+        'seats': request.json['seats'],
+        'driver': request.json.get['driver']
+        }
+   ]
+        rides.append(ride)
 
+    def delete(self):
+        """
+        Delete a Bucket from the database
+        :return:
+        """
+        ride = [ride for ride in rides if ride['id'] == ride_id]
+        if len(ride) == 0:
+            abort(404)
+        rides.remove(ride[0])
+    def json(self):
+        """
+        Json representation of the bucket model.
+        :return:
+        """
+        return {
+            'id': self.id,
+            'datentime': self.datentime
+            'start': self.start
+            'destination': self.destination
+            'seats': self.seats
+            'driver': self.driver
+            'createdAt': self.created_at.isoformat(),
 
-    @staticmethod
-    def get_rides():
-        """Gets all rides"""
+        }
 
-        output = []
-        for ride_id in rides:
-            data = {}
-            data["ride_id"] = ride_id
-            data["datentime"] = rides[ride_id]["datentime"]
-            data["starting"] = rides[ride_id]["starting"]
-            data["destination"] = rides[ride_id]["destination"]
-            data["seats"] = rides[ride_id]["seats"]
-            data["cost"] = rides[ride_id]["cost"]
-            data["description"] = rides[ride_id]["description"]
-            data["driver"] = rides[ride_id]["driver"]
-            output.append(data)
-        return output
+class Request(object):
+    """
+    Request model class
+    """
+    requests = [{ride_id, "pickup_location": u"pickup_location", "seats": u"seats", "requester": u"requester")}
 
-    def get_ride(self, ride_id):
-        """Get a specific ride"""
+    def __init__(self, pickup_location, seats, ride_id, requester):
+        self.request_id = id
+        self.pickup_location = pickup_location
+        self.seats = seats
+        self.requester = requester
+        self.ride_id = ride_id
+        self.create_at = datetime.datetime.utcnow()
+            
+    def save(self):
+        """
+        Add request to the list
+        :return:
+        """
+        request = [
+        {
+        'id': requests[-1]['id'] + 1,
+        'pickup_location': request.json['pickup_location'],
+        'seats': request.json['seats'],
+        'requester': request.json['requester'],
+        }
+   ]
+        requests.append(requests)
 
-        if ride_id not in rides:
-            return {"msg": "The ride id entered is invalid"}
-
-        ride = rides[ride_id]
-        return ride
-
-    def request_ride(self, ride_id, pickup_location, seats, requester):
-        """Request a ride"""
-
-        requests[ride_id] = {
-            "ride_id": rides[ride_id],
-            'request_id': requests[-1]['request_id'] + 1,
-            "seats": seats,
-            "requester": requester}
-        return {"msg": "You have requested this ride"}
-
-
-    def get_ride_requests(self):
-        """Get all requests to a ride"""
-
-        output = []
-        for ride_id in requests:
-            data = {}
-            data['id'] = requests[-1]['id'] + 1,
-            data["ride_id"] = rides.get(ride_id),
-            data["pickup_location"] = requests[ride_id]["pickup_location"]
-            data["seats"] = requests[ride_id]["seats"]
-            data["requester"] = requests[ride_id]["requester"]
-            output.append(data)
-        return output
-
-
-    @staticmethod
-    def delete_ride(ride_id):
-        """Deleting a particular ride"""
-
-        if ride_id not in rides:
-            return {"msg": "Ride ID is Invalid"}
-
-        del rides[ride_id]
-        return {"msg": "Ride has been successfully deleted"}

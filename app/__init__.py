@@ -1,15 +1,27 @@
 # This is the package constructor for the application
 
+import os
 from flask import Flask
 
 from config import CONFIG
 
-def create_app(config_name):
-   
-    app = Flask(__name__)
-    app.config.from_object(CONFIG[config_name])
+# Initialize application
+app = Flask(__name__, static_folder=None)
 
-    from .api import api as api_blueprint
-    app.register_blueprint(api_blueprint)
+# app configuration
+app_settings = os.getenv(
+    'APP_SETTINGS',
+    'app.config.DevelopmentConfig'
+)
+app.config.from_object(app_settings)
 
-    return app
+# Import the application views
+from app import views
+
+from app.rides.views import rides
+
+app.register_blueprint(rides, url_prefix='/v1')
+
+from app.requests.views import requests
+
+app.register_blueprint(requests, url_prefix='/v1')
